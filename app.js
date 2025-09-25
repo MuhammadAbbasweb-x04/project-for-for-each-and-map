@@ -249,17 +249,20 @@ render(products)
 
 }
 
-
+  const filteritem = products.filter(
+    (item) => item.category === categories[index]
+  );
+  console.log(filteritem);
+  render(filteritem);
 
 })
 
 
-let 
 
 
 
 function render(arr){
-  arr.map(item => {
+  arr.map((item) => {
 div.innerHTML += `<div id="cards" >
 <h1> ${item.name}</h1>
 <h2> ${item.price}</h2>
@@ -268,7 +271,7 @@ div.innerHTML += `<div id="cards" >
 </div>` 
 
 
-
+console.log(item)
 
   })
 
