@@ -225,27 +225,51 @@ const products = [
 ];
 
 
-let div = document.querySelector("#container") 
-const getCatgry = []
-
-products.map((val)=>{
-    div.innerHTML += `<div id="cards" >
-<h1> ${val.name}</h1>
-<h2> ${val.brand}</h2>
-<h3> ${val.category}</h3>
-<h4>${val.price}</h4>
-</div>`
+let div = document.querySelector("#container");
+let btn = document.querySelector(".btn");
+const  categories = []
+products.map((item) => {
+if(!categories.includes(item.category)){
+categories.push(item.category) 
+}
 })
 
-products.map((val)=>{
-    if(!getCatgry.includes(val.getCatgry)){
-        getCatgry.push(val.category)
-    }
-})
 
-const btn = document.querySelector(".btn")
-getCatgry.map((item, index) =>{
-btn.innerHTML +=<button></button> 
+categories.map((index, item) =>{
+
+(btn.innerHTML += `<button onclick="(${index})">${item}</button>` )
 
 
 })
+
+let product = ((index) => {
+div.innerHTML = "";
+if(categories === item[index]){
+render(products)
+
+}
+
+
+
+})
+
+
+let 
+
+
+
+function render(arr){
+  arr.map(item => {
+div.innerHTML += `<div id="cards" >
+<h1> ${item.name}</h1>
+<h2> ${item.price}</h2>
+<h3> ${item.category}</h3>
+<h4>${item.brand}</h4>
+</div>` 
+
+
+
+
+  })
+
+}
