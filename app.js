@@ -224,55 +224,51 @@ const products = [
   },
 ];
 
-
 let div = document.querySelector("#container");
-let btn = document.querySelector(".btn");
-const  categories = []
-products.map((item) => {
-if(!categories.includes(item.category)){
-categories.push(item.category) 
+let btn = document.querySelector("#btn");
+
+let categries = ["All items"];
+
+products.map((item) =>{
+if(!categries.includes(item.category)){
+categries.push(category)
 }
 })
 
+btn.map((item, index) => {
+(btn.innerHTML += `<button onclick="(${index})"> 
+ ${item}  
+</button> ` )
+}   
+)
 
-categories.map((index, item) =>{
-
-(btn.innerHTML += `<button onclick="(${index})">${item}</button>` )
-
-
-})
-
-let product = ((index) => {
+let itemscart = ((index) =>{
 div.innerHTML = "";
-if(categories === item[index]){
-render(products)
-
-}
-
-  const filteritem = products.filter(
-    (item) => item.category === categories[index]
-  );
-  console.log(filteritem);
-  render(filteritem);
+categries[index] === "All items"
+return render(products)
 
 })
 
 
+const itemfillter = products.filter((item) =>
 
+item.category  === categries[index]
+
+)
+render(itemfillter)
 
 
 function render(arr){
-  arr.map((item) => {
-div.innerHTML += `<div id="cards" >
-<h1> ${item.name}</h1>
-<h2> ${item.price}</h2>
-<h3> ${item.category}</h3>
-<h4>${item.brand}</h4>
-</div>` 
+ arr.map((item) =>  { div.innerHTML +=`  <div class="card">
+    <h2>${item.name}</h2>
+    <p>$${item.price}</p>
+    <h3>${item.category}</h3>
+    <h3>${item.brand}</h3>
 
+    <button >Add to Cart</button>
+  </div>` 
+})
 
-console.log(item)
-
-  })
 
 }
+
