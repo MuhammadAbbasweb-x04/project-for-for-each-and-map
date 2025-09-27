@@ -1,5 +1,5 @@
 const products = [
-  // Electronics
+ 
   {
     name: "Wireless Mouse",
     price: 25.99,
@@ -63,7 +63,7 @@ const products = [
     brand: "Timberland",
   },
 
-  // Home Appliances
+  
   {
     name: "Blender",
     price: 34.99,
@@ -159,7 +159,7 @@ const products = [
     brand: "Pottery Barn",
   },
 
-  // Fitness
+
   {
     name: "Yoga Mat",
     price: 19.99,
